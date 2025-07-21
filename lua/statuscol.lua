@@ -94,8 +94,6 @@ local function get_click_args(minwid, clicks, button, mods)
   local text = f.screenstring(args.mousepos.screenrow, args.mousepos.screencol)
   -- When empty space is clicked try one cell to the left
   args.text = text ~= " " and text or f.screenstring(args.mousepos.screenrow, args.mousepos.screencol - 1)
-  a.nvim_set_current_win(args.mousepos.winid)
-  a.nvim_win_set_cursor(0, {args.mousepos.line, 0})
   return args
 end
 
